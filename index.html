@@ -5,13 +5,15 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Portfolio</title>
 
-  <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Exo+2:wght@400;700&family=Quicksand:wght@400;700&display=swap" rel="stylesheet">
-  <!-- Font Awesome -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
   <style>
-    /* ========== BODY & LAYOUT ========== */
+    html{
+      scroll-behavior: smooth;
+      cursor: none;
+    }
+
     body {
       font-family: 'Quicksand', sans-serif;
       margin: 0;
@@ -22,6 +24,7 @@
       background: url('a350.jpg') no-repeat center center;
       background-size: cover;
       color: #fff;
+      
     }
 
     header {
@@ -31,9 +34,8 @@
       backdrop-filter: blur(8px);
     }
 
-    /* ========== GLASS CARD ========== */
     .glasscard, .competences {
-      background: rgba(255, 255, 255, 0.2);
+      background: rgba(0, 0, 0, 0.2);
       border-radius: 15px;
       padding: 20px;
       margin: 20px auto;
@@ -57,50 +59,6 @@
       100% { opacity: 1; transform: scale(1) translateZ(0); }
     }
 
-    /* ========== ACRONYM ========== */
-    .acronym-container {
-      display: flex;
-      justify-content: center;
-      gap: 10px;
-      flex-wrap: wrap;
-      perspective: 1000px;
-    }
-
-    .letter-block {
-      flex: none;
-      text-align: center;
-      opacity: 0;
-      transform: scale(0.1) translateZ(-800px);
-      animation: zoomPop 0.8s cubic-bezier(0.25, 1.5, 0.5, 1) forwards;
-    }
-
-    .letter-block:nth-child(1) { animation-delay: 0s; }
-    .letter-block:nth-child(2) { animation-delay: 0.1s; }
-    .letter-block:nth-child(3) { animation-delay: 0.2s; }
-    .letter-block:nth-child(4) { animation-delay: 0.3s; }
-    .letter-block:nth-child(5) { animation-delay: 0.4s; }
-    .letter-block:nth-child(6) { animation-delay: 0.5s; }
-
-    .letter-block .letter {
-      font-size: 4em;
-      font-weight: bold;
-      font-family: 'Exo 2', sans-serif;
-      background: linear-gradient(45deg, #FF6B6B, #FFD93D);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      transition: filter 0.2s;
-    }
-
-    .letter-block .letter:hover {
-      filter: brightness(1.2);
-    }
-
-    .letter-block .desc {
-      font-size: 1.2em;
-      margin-top: 5px;
-    }
-
-    /* ========== SOCIAL ICONS ========== */
     .wrapper {
       display: inline-flex;
       justify-content: center;
@@ -173,18 +131,80 @@
       color: #fff;
     }
 
-    /* ========== FOOTER ========== */
     .footer{
       text-align: center;
       padding: 15px 20px;
       background: rgba(0,0,0,0.3);
       backdrop-filter: blur(8px);
       color: white;
-      margin-top: auto; /* ça force le footer en bas */
-      
+      margin-top: auto;
     }
 
-    /* ========== RESPONSIVE ========== */
+    .navbar ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+      flex-wrap: wrap;
+    }
+    .navbar ul li {
+      display: inline;
+    }
+    .navbar ul li a {
+      text-decoration: none;
+      color: white;
+      font-weight: bold;
+      transition: color 0.3s;
+    }
+    .navbar ul li a:hover {
+      color: #FFD93D;
+    }
+
+    .navbar .accueil a {
+      font-size: 1.2em;
+      font-weight: bold;
+      color: #ffffff;
+    }
+    .navbar .accueil a:hover {
+      color: #FFD93D;
+    }
+
+    .accueil-wrapper {
+      background: rgba(255, 255, 255, 0.2);
+      backdrop-filter: blur(10px);
+      padding: 8px 20px;
+      border-radius: 25px;
+      color: #fff;
+      font-weight: bold;
+      transition: all 0.3s ease;
+    }
+
+    .accueil-wrapper:hover {
+      background: rgba(255, 255, 255, 0.4);
+      transform: scale(1.05);
+      color: #FFD93D;
+    }
+
+    #mouse {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 64px;
+  height: 64px;
+  background: url('cursor.png') no-repeat center center;
+  background-size: contain;
+  pointer-events: none; /* pour que le curseur ne bloque pas les clics */
+  transform: translate(-50%, -50%);
+  z-index: 9999;
+  transform: translate(-35%, -25%);
+  pointer-events: none; 
+}
+
+
+
+
     @media (max-width: 600px) {
       .letter-block .letter {
         font-size: 2.5em;
@@ -194,50 +214,23 @@
   </style>
 </head>
 <body>
+  <div id="mouse"></div>
   <header>
-    <div class="acronym-container">
-      <div class="letter-block">
-        <div class="letter">C</div>
-        <div class="desc">Code</div>
-      </div>
-      <div class="letter-block">
-        <div class="letter">R</div>
-        <div class="desc">Rethink</div>
-      </div>
-      <div class="letter-block">
-        <div class="letter">E</div>
-        <div class="desc">Electronics</div>
-      </div>
-      <div class="letter-block">
-        <div class="letter">A</div>
-        <div class="desc">Aviation</div>
-      </div>
-      <div class="letter-block">
-        <div class="letter">T</div>
-        <div class="desc">Technology</div>
-      </div>
-      <div class="letter-block">
-        <div class="letter">E</div>
-        <div class="desc">Engineering</div>
-      </div>
-    </div>
+    <nav class="navbar">
+      <ul>
+        <li class="accueil">
+          <a href="index - Copie.html" class="accueil-wrapper">Accueil</a>
+        </li>
+        <li><a href="projects.html">Mes projets</a></li>
+        <li><a href="competences.html">Mes compétences</a></li>
+        <li><a href="contact.html">Me contacter</a></li>
+        <li><a href="collaborate.html">Collaborer avec moi</a></li>
+      </ul>
+    </nav>
   </header>
-
   <div class="glasscard">
     <h1>Code, électronique, aviation et design : la fusion de mes passions pour créer des projets uniques</h1>
   </div>
-
-  <div class="competences">
-    <h2>Mes Compétences</h2>
-    <h3><span class="highlight">Langages de programmation :</span> Python, JavaScript (en cours d'apprentissage), HTML/CSS</h3>
-    <h3><span class="highlight">Outils de développement :</span> Git, VS Code</h3>
-    <h3><span class="highlight">Conception électronique :</span> Arduino, ESP32</h3>
-    <h3><span class="highlight">Design graphique :</span> Canva, Figma (en cours d'apprentissage)</h3>
-    <h3><span class="highlight">Langues :</span> Français (natif), Anglais (intermédiaire)</h3>
-  </div>
-
- 
-
 
 
   <div class="footer">
@@ -257,5 +250,13 @@
     </ul>
     © 2025 Nathan Lagardere
   </div>
+
+  <script>
+    const mouse = document.querySelector('#mouse')
+    window.addEventListener('mousemove', (e) => {
+      mouse.style.top = e.pageY + 'px'
+      mouse.style.left = e.pageX + 'px'
+    })
+  </script>
 </body>
 </html>
