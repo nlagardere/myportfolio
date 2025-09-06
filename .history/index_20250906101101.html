@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portfolio</title>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Exo+2:wght@400;700&family=Quicksand:wght@400;700&display=swap" rel="stylesheet">
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <style>
+    /* ========== BODY & LAYOUT ========== */
+    body {
+      font-family: 'Quicksand', sans-serif;
+      margin: 0;
+      padding: 0;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;       /* empile header, contenu, footer verticalement */
+      justify-content: space-between; /* espace entre header/contenu et footer */
+      background: url('a350.jpg') no-repeat center center;
+      background-size: cover;
+      color: #333;
+    }
+
+    header {
+      text-align: center;
+      padding: 30px 20px;
+      background: rgba(0,0,0,0.3);
+      backdrop-filter: blur(8px);
+      color: white;
+    }
+
+    .glasscard {
+      background: rgba(255, 255, 255, 0.2);
+      border-radius: 15px;
+      padding: 20px;
+      margin: 20px auto;
+      max-width: 800px;
+      backdrop-filter: blur(10px);
+      box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+      color: white;
+      text-align: center;
+      animation: zoomPop 1s ease forwards;
+    }
+
+    /* ========== ACRONYM ========== */
+    .acronym-container {
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+      flex-wrap: wrap;
+      perspective: 1000px;
+    }
+
+    .letter-block {
+      flex: none;
+      text-align: center;
+      opacity: 0;
+      transform: scale(0.1) translateZ(-800px);
+      animation: zoomPop 0.8s cubic-bezier(0.25, 1.5, 0.5, 1) forwards;
+    }
+
+    .letter-block:nth-child(1) { animation-delay: 0s; }
+    .letter-block:nth-child(2) { animation-delay: 0.1s; }
+    .letter-block:nth-child(3) { animation-delay: 0.2s; }
+    .letter-block:nth-child(4) { animation-delay: 0.3s; }
+    .letter-block:nth-child(5) { animation-delay: 0.4s; }
+    .letter-block:nth-child(6) { animation-delay: 0.5s; }
+
+    .letter-block .letter {
+      font-size: 4em;
+      font-weight: bold;
+      font-family: 'Exo 2', sans-serif;
+      background: linear-gradient(45deg, #FF6B6B, #FFD93D);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      transition: filter 0.2s;
+    }
+
+    .letter-block .letter:hover {
+      filter: brightness(1.2);
+    }
+
+    .letter-block .desc {
+      font-size: 1.2em;
+      margin-top: 5px;
+    }
+
+    @keyframes zoomPop {
+      0% { opacity: 0; transform: scale(0.1) translateZ(-800px); }
+      60% { opacity: 1; transform: scale(1.2) translateZ(50px); }
+      80% { transform: scale(0.95) translateZ(0); }
+      100% { opacity: 1; transform: scale(1) translateZ(0); }
+    }
+
+    /* ========== SOCIAL ICONS ========== */
+    .wrapper {
+      display: inline-flex;
+      justify-content: center;
+      list-style: none;
+      padding: 20px 0;
+      margin: 0 auto;
+    }
+
+    .wrapper .icon {
+      position: relative;
+      background: #ffffff;
+      border-radius: 50%;
+      padding: 15px;
+      margin: 0 10px;
+      width: 50px;
+      height: 50px;
+      font-size: 18px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      cursor: pointer;
+      transition: all 0.2s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    }
+
+    /* Tooltip */
+    .wrapper .tooltip {
+      position: absolute;
+      bottom: 100%;           /* au-dessus de l’icône */
+      left: 50%;
+      transform: translateX(-50%) translateY(-10px);
+      font-size: 14px;
+      background: #333;
+      color: #fff;
+      padding: 5px 8px;
+      border-radius: 5px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+      opacity: 0;
+      pointer-events: none;
+      white-space: nowrap;
+      transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+      z-index: 10;
+    }
+
+    .wrapper .tooltip::before {
+      content: "";
+      position: absolute;
+      top: 100%;              /* triangle sous le tooltip */
+      left: 50%;
+      transform: translateX(-50%) rotate(45deg);
+      width: 8px;
+      height: 8px;
+      background: #333;
+    }
+
+    .wrapper .icon:hover .tooltip {
+      opacity: 1;
+      pointer-events: auto;
+      transform: translateX(-50%) translateY(-15px);
+    }
+
+    /* Hover colors */
+    .wrapper .mail:hover,
+    .wrapper .mail:hover .tooltip,
+    .wrapper .mail:hover .tooltip::before {
+      background: #00CED1;
+      color: #ffffff;
+    }
+
+    .wrapper .github:hover,
+    .wrapper .github:hover .tooltip,
+    .wrapper .github:hover .tooltip::before {
+      background: #333333;
+      color: #ffffff;
+    }
+
+    .compétences{
+      text-align: center;
+      background: rgba(255, 255, 255, 0.2);
+      border-radius: 15px;
+      padding: 20px;
+      margin: 20px auto;
+      max-width: 800px;
+      backdrop-filter: blur(10px);
+      box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+      color: white;
+      text-align: center;
+      animation: zoomPop 1s ease forwards;
+    }
+
+    .highlight {
+      color: #FFD93D;
+      font-weight: 500;
+    }
+
+    /* Responsive letters */
+    @media (max-width: 600px) {
+      .letter-block .letter {
+        font-size: 2.5em;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <div class="acronym-container">
+      <div class="letter-block">
+        <div class="letter">C</div>
+        <div class="desc">Code</div>
+      </div>
+      <div class="letter-block">
+        <div class="letter">R</div>
+        <div class="desc">Rethink</div>
+      </div>
+      <div class="letter-block">
+        <div class="letter">E</div>
+        <div class="desc">Electronics</div>
+      </div>
+      <div class="letter-block">
+        <div class="letter">A</div>
+        <div class="desc">Aviation</div>
+      </div>
+      <div class="letter-block">
+        <div class="letter">T</div>
+        <div class="desc">Technology</div>
+      </div>
+      <div class="letter-block">
+        <div class="letter">E</div>
+        <div class="desc">Engineering</div>
+      </div>
+    </div>
+  </header>
+
+  <div class="glasscard">
+    <h1>Code, électronique, aviation et design : la fusion de mes passions pour créer des projets uniques</h1>
+  </div>
+
+  <ul class="wrapper">
+    <li class="icon mail">
+      <a href="mailto:nathan.lagardere@gmail.com" target="_blank">
+        <span class="tooltip">Mail</span>
+        <i class="fas fa-envelope"></i>
+      </a>
+    </li>
+
+    <li class="icon github">
+      <a href="https://github.com/nlagardere" target="_blank">
+        <span class="tooltip">Github</span>
+        <i class="fab fa-github"></i>
+      </a>
+    </li>
+  </ul>
+
+  <div class="compétences">
+    <h2>Mes Compétences</h2>
+    
+      <h3><span class="highlight">Langages de programmation :</span> Python, JavaScript (en cours d'apprentissage), HTML/CSS</h3>
+      <h3>Outils de développement : Git, VS Code</h3>
+      <h3>Conception électronique : Arduino, ESP32</h3>
+      <h3>Design graphique : Canva, Figma (en cours d'apprentissage)</h3>
+      <h3>Langues : Français (natif), Anglais (intermédiaire)</h3>
+
+  </div>
+  
+</body>
+</html>
