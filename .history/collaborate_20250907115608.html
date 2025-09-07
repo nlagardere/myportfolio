@@ -1,17 +1,9 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact</title>
-</head>
-<body>
-    <!DOCTYPE html>
 <html lang="fr">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Portfolio</title>
+  <title>Collaborer avec moi</title>
 
   <link href="https://fonts.googleapis.com/css2?family=Exo+2:wght@400;700&family=Quicksand:wght@400;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
@@ -215,6 +207,18 @@
   color: #000000;            /* couleur du texte */
 }
 
+    .btn-github {
+      display: inline-block;
+      padding: 10px 20px;
+      margin-top: 20px;
+      background-color: #333;
+      color: #fff;
+      text-decoration: none;
+      border-radius: 5px;
+      font-weight: bold;
+      transition: background-color 0.3s, transform 0.3s;
+    }
+
 
     @media (max-width: 600px) {
       .letter-block .letter {
@@ -222,11 +226,12 @@
       }
     }
 
+
   </style>
 </head>
 <body>
-  <div id="mouse"></div>
   <header>
+    <h1>Collaborer avec moi sur GitHub</h1>
     <nav class="navbar">
       <ul>
         <li class="accueil">
@@ -234,44 +239,19 @@
         </li>
         <li><a href="projects.html">Mes projets</a></li>
         <li><a href="competences.html">Mes compétences</a></li>
-        <li><a href="contact.html"  class="accueil-wrapper">Me contacter</a></li>
-        <li><a href="collaborate.html">Collaborer avec moi</a></li>
+        <li><a href="contact.html">Me contacter</a></li>
+        <li><a href="collaborate.html" class="collaborate-wrapper">Collaborer</a></li>
       </ul>
-    </nav>
   </header>
+
   <div class="glasscard">
-    <h1>Une question, une idée, une remarque ?</h1>
-    <p>N'hésitez pas à me contacter !</p>
-    <h1>Chargement du formulaire...</h1>
-    </div>
-    <div data-tf-live="01K4HQQ1CHESVRZJ794S8BN4VA"></div><script src="//embed.typeform.com/next/embed.js"></script>
-  <div class="footer">
-    <ul class="wrapper">
-      <li class="icon mail">
-        <a href="mailto:nathan.lagardere@gmail.com" target="_blank">
-          <span class="tooltip">Mail</span>
-          <i class="fas fa-envelope"></i>
-        </a>
-      </li>
-      <li class="icon github">
-        <a href="https://github.com/nlagardere" target="_blank">
-          <span class="tooltip">Github</span>
-          <i class="fab fa-github"></i>
-        </a>
-      </li>
-    </ul>
-    © 2025 Nathan Lagardere
+    <h1>Prêt à collaborer ?</h1>
+    <p>Tu as des idées ou envie de créer quelque chose de nouveau ? Rejoins-moi pour collaborer sur des projets passionnants, partager des compétences et construire ensemble quelque chose d’unique. Que tu sois développeur, designer, créatif ou curieux, toutes les contributions sont les bienvenues </p>
+    <a class="btn-github" href="https://github.com/nlagardere/" target="_blank">Voir mon Github</a>
   </div>
 
-  <script>
-    const mouse = document.querySelector('#mouse')
-    window.addEventListener('mousemove', (e) => {
-      mouse.style.top = e.pageY + 'px'
-      mouse.style.left = e.pageX + 'px'
-    })
-  </script>
-</body>
-</html>
-
+  <div class="footer">
+    © 2025 Nathan Lagardere
+  </div>
 </body>
 </html>

@@ -1,12 +1,4 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact</title>
-</head>
-<body>
-    <!DOCTYPE html>
 <html lang="fr">
 <head>
   <meta charset="UTF-8">
@@ -179,7 +171,7 @@
       color: #FFD93D;
     }
 
-    .accueil-wrapper {
+    .projets-wrapper {
       background: rgba(255, 255, 255, 0.2);
       backdrop-filter: blur(10px);
       padding: 8px 20px;
@@ -189,7 +181,7 @@
       transition: all 0.3s ease;
     }
 
-    .accueil-wrapper:hover {
+    .projets-wrapper:hover {
       background: rgba(255, 255, 255, 0.4);
       transform: scale(1.05);
       color: #FFD93D;
@@ -209,11 +201,11 @@
   transform: translate(-35%, -25%);
   pointer-events: none; 
 }
-
 ::selection {
   background-color: #ffcc00; /* couleur de fond */
   color: #000000;            /* couleur du texte */
 }
+
 
 
     @media (max-width: 600px) {
@@ -232,19 +224,25 @@
         <li class="accueil">
           <a href="index.html">Accueil</a>
         </li>
-        <li><a href="projects.html">Mes projets</a></li>
+        <li><a href="projects.html" class="projets-wrapper">Mes projets</a></li>
         <li><a href="competences.html">Mes compétences</a></li>
-        <li><a href="contact.html"  class="accueil-wrapper">Me contacter</a></li>
+        <li><a href="contact.html">Me contacter</a></li>
         <li><a href="collaborate.html">Collaborer avec moi</a></li>
       </ul>
     </nav>
   </header>
-  <div class="glasscard">
-    <h1>Une question, une idée, une remarque ?</h1>
-    <p>N'hésitez pas à me contacter !</p>
-    <h1>Chargement du formulaire...</h1>
+
+ <div calss="projects">
+    <div class="glasscard">
+      <h2>Mes Projets</h2>
+      <h3><span class="highlight">StandBy Mode : </span>Une horloge avec affichage de photos inspirée du mode StandBy disponible à partir d'iOS 17.</h3>
+      <h3><span class="highlight">Apple Search</span>Une extention Chrome qui transforme le moteur de recherche Google dans un style Apple.</h3>
+      <h3><span class="highlight">AirFrance IFE</span></h3>
     </div>
-    <div data-tf-live="01K4HQQ1CHESVRZJ794S8BN4VA"></div><script src="//embed.typeform.com/next/embed.js"></script>
+  </div>
+
+
+  
   <div class="footer">
     <ul class="wrapper">
       <li class="icon mail">
@@ -270,8 +268,5 @@
       mouse.style.left = e.pageX + 'px'
     })
   </script>
-</body>
-</html>
-
 </body>
 </html>

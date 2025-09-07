@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Collaborer avec moi</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Exo+2:wght@400;700&family=Quicksand:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <style>
+    body {
+      font-family: 'Quicksand', sans-serif;
+      margin: 0;
+      padding: 0;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      background: url('a350.jpg') no-repeat center center;
+      background-size: cover;
+      color: #fff;
+    }
+
+    header {
+      text-align: center;
+      padding: 30px 20px;
+      background: rgba(0,0,0,0.3);
+      backdrop-filter: blur(8px);
+    }
+
+    .glasscard {
+      background: rgba(0, 0, 0, 0.3);
+      border-radius: 15px;
+      padding: 40px 20px;
+      margin: 40px auto;
+      max-width: 800px;
+      backdrop-filter: blur(10px);
+      box-shadow: 0 4px 30px rgba(0,0,0,0.1);
+      text-align: center;
+      color: white;
+      animation: zoomPop 1s ease forwards;
+    }
+
+    .glasscard h1 {
+      margin-bottom: 20px;
+    }
+
+    .btn-github {
+      display: inline-block;
+      padding: 12px 20px;
+      background: #FFD93D;
+      color: #000;
+      font-weight: bold;
+      text-decoration: none;
+      border-radius: 12px;
+      margin-top: 20px;
+      transition: transform 0.2s;
+    }
+
+    .btn-github:hover {
+      transform: scale(1.05);
+    }
+
+    @keyframes zoomPop {
+      0% { opacity: 0; transform: scale(0.1) translateZ(-800px); }
+      60% { opacity: 1; transform: scale(1.2) translateZ(50px); }
+      80% { transform: scale(0.95) translateZ(0); }
+      100% { opacity: 1; transform: scale(1) translateZ(0); }
+    }
+
+    .footer{
+      text-align: center;
+      padding: 15px 20px;
+      background: rgba(0,0,0,0.3);
+      backdrop-filter: blur(8px);
+      color: white;
+      margin-top: auto;
+    }
+    
+
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Collaborer avec moi sur GitHub</h1>
+    <nav class="navbar">
+      <ul>
+        <li class="accueil">
+          <a href="index.html">Accueil</a>
+        </li>
+        <li><a href="projects.html">Mes projets</a></li>
+        <li><a href="competences.html">Mes compétences</a></li>
+        <li><a href="contact.html">Me contacter</a></li>
+        <li><a href="collaborate.html" class="collaborate-wrapper">Collaborer</a></li>
+      </ul>
+  </header>
+
+  <div class="glasscard">
+    <h1>Prêt à collaborer ?</h1>
+    <p>Tu as des idées ou envie de créer quelque chose de nouveau ? Rejoins-moi pour collaborer sur des projets passionnants, partager des compétences et construire ensemble quelque chose d’unique. Que tu sois développeur, designer, créatif ou curieux, toutes les contributions sont les bienvenues </p>
+    <a class="btn-github" href="https://github.com/nlagardere/" target="_blank">Voir mon Github</a>
+  </div>
+
+  <div class="footer">
+    © 2025 Nathan Lagardere
+  </div>
+</body>
+</html>
