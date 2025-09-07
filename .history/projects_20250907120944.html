@@ -1,23 +1,17 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact Me</title>
-</head>
-<body>
-    <!DOCTYPE html>
 <html lang="fr">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Portfolio</title>
+  <title>Portfolio - Nathan Lagardere</title>
 
+  <!-- Fonts et icônes -->
   <link href="https://fonts.googleapis.com/css2?family=Exo+2:wght@400;700&family=Quicksand:wght@400;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
   <style>
-    html{
+    /* Global */
+    html {
       scroll-behavior: smooth;
       cursor: none;
     }
@@ -32,9 +26,28 @@
       background: url('a350.jpg') no-repeat center center;
       background-size: cover;
       color: #fff;
-      
     }
 
+    ::selection {
+      background-color: #ffcc00;
+      color: #000;
+    }
+
+    /* Curseur personnalisé */
+    #mouse {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 64px;
+      height: 64px;
+      background: url('cursor.png') no-repeat center center;
+      background-size: contain;
+      pointer-events: none;
+      transform: translate(-50%, -50%);
+      z-index: 9999;
+    }
+
+    /* Header & Navigation */
     header {
       text-align: center;
       padding: 30px 20px;
@@ -42,6 +55,45 @@
       backdrop-filter: blur(8px);
     }
 
+    .navbar ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+      flex-wrap: wrap;
+    }
+
+    .navbar ul li a {
+      text-decoration: none;
+      color: white;
+      font-weight: bold;
+      transition: color 0.3s;
+    }
+
+    .navbar ul li a:hover,
+    .navbar ul li a.active {
+      color: #FFD93D;
+    }
+
+    .projets-wrapper {
+      background: rgba(255, 255, 255, 0.2);
+      backdrop-filter: blur(10px);
+      padding: 8px 20px;
+      border-radius: 25px;
+      color: #fff;
+      font-weight: bold;
+      transition: all 0.3s ease;
+    }
+
+    .projets-wrapper:hover {
+      background: rgba(255, 255, 255, 0.4);
+      transform: scale(1.05);
+      color: #FFD93D;
+    }
+
+    /* Sections Glassmorphism */
     .glasscard, .competences {
       background: rgba(0, 0, 0, 0.2);
       border-radius: 15px;
@@ -53,6 +105,12 @@
       text-align: center;
       animation: zoomPop 1s ease forwards;
       color: white;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .glasscard:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 40px rgba(0,0,0,0.3);
     }
 
     .highlight {
@@ -65,6 +123,16 @@
       60% { opacity: 1; transform: scale(1.2) translateZ(50px); }
       80% { transform: scale(0.95) translateZ(0); }
       100% { opacity: 1; transform: scale(1) translateZ(0); }
+    }
+
+    /* Footer */
+    .footer{
+      text-align: center;
+      padding: 15px 20px;
+      background: rgba(0,0,0,0.3);
+      backdrop-filter: blur(8px);
+      color: white;
+      margin-top: auto;
     }
 
     .wrapper {
@@ -139,84 +207,11 @@
       color: #fff;
     }
 
-    .footer{
-      text-align: center;
-      padding: 15px 20px;
-      background: rgba(0,0,0,0.3);
-      backdrop-filter: blur(8px);
-      color: white;
-      margin-top: auto;
-    }
-
-    .navbar ul {
-      list-style: none;
-      padding: 0;
-      margin: 0;
-      display: flex;
-      justify-content: center;
-      gap: 30px;
-      flex-wrap: wrap;
-    }
-    .navbar ul li {
-      display: inline;
-    }
-    .navbar ul li a {
-      text-decoration: none;
-      color: white;
-      font-weight: bold;
-      transition: color 0.3s;
-    }
-    .navbar ul li a:hover {
-      color: #FFD93D;
-    }
-
-    .navbar .accueil a {
-      font-size: 1.2em;
-      font-weight: bold;
-      color: #ffffff;
-    }
-    .navbar .accueil a:hover {
-      color: #FFD93D;
-    }
-
-    .accueil-wrapper {
-      background: rgba(255, 255, 255, 0.2);
-      backdrop-filter: blur(10px);
-      padding: 8px 20px;
-      border-radius: 25px;
-      color: #fff;
-      font-weight: bold;
-      transition: all 0.3s ease;
-    }
-
-    .accueil-wrapper:hover {
-      background: rgba(255, 255, 255, 0.4);
-      transform: scale(1.05);
-      color: #FFD93D;
-    }
-
-    #mouse {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 64px;
-  height: 64px;
-  background: url('cursor.png') no-repeat center center;
-  background-size: contain;
-  pointer-events: none; /* pour que le curseur ne bloque pas les clics */
-  transform: translate(-50%, -50%);
-  z-index: 9999;
-  transform: translate(-35%, -25%);
-  pointer-events: none; 
-}
-
-::selection {
-  background-color: #ffcc00; /* couleur de fond */
-  color: #000000;            /* couleur du texte */
-}
-
-
+    /* Responsive */
     @media (max-width: 600px) {
+      .glasscard, .competences {
+        padding: 15px;
+      }
       .letter-block .letter {
         font-size: 2.5em;
       }
@@ -226,26 +221,32 @@
 </head>
 <body>
   <div id="mouse"></div>
+
+  <!-- Header et Navigation -->
   <header>
     <nav class="navbar">
       <ul>
-        <li class="accueil">
-          <a href="index.html">Accueil</a>
-        </li>
-        <li><a href="projects.html">Mes projets</a></li>
-        <li><a href="competences.html">Mes compétences</a></li>
-        <li><a href="contact.html"  class="accueil-wrapper">Me contacter</a></li>
-        <li><a href="collaborate.html">Collaborer avec moi</a></li>
+        <li class="accueil"><a href="index.html" class="active">Accueil</a></li>
+        <li><a href="projects.html" class="projets-wrapper">Mes Projets</a></li>
+        <li><a href="competences.html">Mes Compétences</a></li>
+        <li><a href="contact.html">Me Contacter</a></li>
+        <li><a href="collaborate.html">Collaborer</a></li>
       </ul>
     </nav>
   </header>
-  <div class="glasscard">
-    <h1>Une question, une idée, une remarque ?</h1>
-    <p>N'hésitez pas à me contacter !</p>
-    <h1>Chargement du formulaire...</h1>
+
+  <!-- Section Projets -->
+  <section class="projects">
+    <div class="glasscard">
+      <h2>Mes Projets</h2>
+      <h3><span class="highlight">StandBy Mode :</span> Horloge innovante avec affichage de photos, inspirée du mode StandBy d'iOS 17.</h3>
+      <h3><span class="highlight">Apple Search :</span> Extension Chrome transformant l'expérience Google dans un style élégant Apple.</h3>
+      <h3><span class="highlight">AirFrance IFE :</span> Dashboard web inspiré des écrans de divertissement à bord des vols AirFrance.</h3>
     </div>
-    <div data-tf-live="01K4HQQ1CHESVRZJ794S8BN4VA"></div><script src="//embed.typeform.com/next/embed.js"></script>
-  <div class="footer">
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
     <ul class="wrapper">
       <li class="icon mail">
         <a href="mailto:nathan.lagardere@gmail.com" target="_blank">
@@ -261,17 +262,15 @@
       </li>
     </ul>
     © 2025 Nathan Lagardere
-  </div>
+  </footer>
 
   <script>
-    const mouse = document.querySelector('#mouse')
+    // Curseur personnalisé
+    const mouse = document.querySelector('#mouse');
     window.addEventListener('mousemove', (e) => {
-      mouse.style.top = e.pageY + 'px'
-      mouse.style.left = e.pageX + 'px'
-    })
+      mouse.style.top = e.pageY + 'px';
+      mouse.style.left = e.pageX + 'px';
+    });
   </script>
-</body>
-</html>
-
 </body>
 </html>
